@@ -140,7 +140,7 @@ export default function HomeClient() {
       <section id="portfolio" className="flex flex-col items-center mt-28 px-8 w-full">
         <h1 className="text-3xl font-bold text-[#C1C1C1] mb-8">Portfolio</h1>
         <div className="flex flex-wrap justify-center gap-16 w-full max-w-6xl mt-8">
-            <Project project="Fotorallye" img="fotorallye.svg" descrtiption="Web-App für interaktive Foto-Challenges mit Aufgaben, Punktesystem und Teamfunktion. Entwickelt mit [z. B. React & Firebase], optimiert für mobile Nutzung bei Events und Gruppenaktionen." demoLink="https://fotorallye.tim-stoepel.de" />
+            <Project project="Fotorallye" img="fotorallye.svg" descrtiption="Web-App für interaktive Foto-Challenges mit Aufgaben, Punktesystem und Teamfunktion. Entwickelt mit NextJS und Supabase, optimiert für mobile Nutzung bei Events und Gruppenaktionen." demoLink="https://fotorallye.tim-stoepel.de" />
         </div>
       </section>
       <section id="contact" className="flex flex-col items-center justify-center py-36 w-full mt-28">
