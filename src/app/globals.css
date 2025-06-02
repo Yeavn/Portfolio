@@ -1,8 +1,20 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
-  --background: #ffffff;
+  --background: #121212;
   --foreground: #171717;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
 @theme inline {
@@ -12,15 +24,27 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.nav-logo {
+    background: linear-gradient(90deg, #FD6F00 56.25%, #E00000 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-gradient {
+    background: var(--Gradient, linear-gradient(90deg, #A04600 0%, #FD6F00 100%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-gradient {
+    background: var(--Gradient, linear-gradient(90deg, #A04600 0%, #FD6F00 100%));
+
 }
