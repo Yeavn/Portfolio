@@ -1,9 +1,11 @@
 "use client";
 import { useCallback, useEffect, useState } from "react"
-import { FaInstagram, FaLinkedin, FaGithub, FaHtml5, FaReact } from "react-icons/fa"
+import { FaInstagram, FaLinkedin, FaGithub, FaHtml5, FaReact, FaCode, FaMusic, FaGraduationCap } from "react-icons/fa"
 import { FaXTwitter } from "react-icons/fa6"
 import { IoLogoJavascript } from "react-icons/io5";
-import { RiTailwindCssFill } from "react-icons/ri";
+import { RiTailwindCssFill, RiNextjsFill } from "react-icons/ri";
+import { DiMysql } from "react-icons/di";
+
 
 import AboutBar from "./aboutBar";
 import Project from "./project";
@@ -18,7 +20,6 @@ export default function HomeClient() {
     const [scrolled, setScrolled] = useState(false)
     const scrollThreshold = 50
 
-    // Funktion, die beim Scrollen aufgerufen wird
     const handleScroll = useCallback(() => {
         if (window.scrollY > scrollThreshold) {
         setScrolled(true);
@@ -72,8 +73,8 @@ export default function HomeClient() {
             <div className="bg-[#353535] rounded-full w-[35px] aspect-square border-1 border-[#878787] flex justify-center items-center"><FaXTwitter className="text-[#C8C8C8] " /></div>
           </div>
           <div className="mb-4 flex flex-col gap-3">
-            <button className="w-full bg-[#FD6F00] py-2 mt-2 rounded-md shadow-lg text-white hover:bg-[#fd6e00db] transition-all duration-200">Stellen Sie mich ein</button>
-            <button className="w-full bg-transparent py-2 rounded-md shadow-lg text-white border-1 border-[#878787] hover:border-[#878787c6] transition-all duration-200">Projekt starten</button>
+            <a className="w-full bg-[#FD6F00] py-2 mt-2 rounded-md shadow-lg text-white hover:bg-[#fd6e00db] transition-all duration-200 text-center" href="#contact" onClick={() => setBetreff("Anfrage Werksstudent 20h/Woche")}>Stellen Sie mich ein</a>
+            <a className="w-full bg-transparent py-2 rounded-md shadow-lg text-white border-1 border-[#878787] hover:border-[#878787c6] transition-all duration-200 text-center" href="#contact" onClick={() => setBetreff("Projektanfrage")}>Projekt starten</a>
           </div>
         </div>
       </section>
@@ -82,21 +83,58 @@ export default function HomeClient() {
         <img src="/icons/aboutAvatar.svg" className="max-w-[225px] w-1/2 mt-14 " alt="" />
         <div className="w-5/6 lg:w-1/2 flex flex-col gap-4 mt-12">
             <h1 className="text-[#C1C1C1] text-3xl">Über mich</h1>
-            <p className="text-[#878787]">Mein Name ist Tim Stoepel. Ich habe im Alter von 12 Jahren mit der Spielentwicklung angefangen. Seit 2019 sammel ich auch Erfahrungen in der Webentwicklung.</p>
+            <div className="text-[#878787] space-y-6">
             <div>
-                <div className="flex gap-2 flex-col">
-                    <AboutBar skill="CSS" percentage={90} />
-                    <AboutBar skill="NextJS" percentage={75} />
-                    <AboutBar skill="NodeJS" percentage={80} />
-                    <AboutBar skill="MySQL" percentage={90} />
+              <div className="flex items-center gap-2 text-[#C1C1C1]">
+                <FaCode /> <h2 className="text-lg font-semibold">Mein Einstieg in die Technik</h2>
+              </div>
+              <p>
+                Mit 12 Jahren fing alles an – eigene Erweiterungen (Mods) für <span className="text-[#C1C1C1] font-medium">Minecraft</span>.
+                Aus Neugier wurde Leidenschaft: Zwischen 2019 und 2022 programmierte ich intensiv mit <span className="text-[#C1C1C1] font-medium">FiveM</span> und sammelte erste Erfahrungen in der <span className="text-[#C1C1C1] font-medium">Webentwicklung</span>.
+              </p>
+            </div>
+
+            <div>
+              <div className="flex items-center gap-2 text-[#C1C1C1]">
+                <FaGraduationCap /> <h2 className="text-lg font-semibold">Lernen als täglicher Begleiter</h2>
+              </div>
+              <p>
+                Neue Technologien, eigene Projekte oder der Austausch mit anderen Entwickler:innen – ich liebe es, dazuzulernen und über den Tellerrand zu schauen.
+              </p>
+            </div>
+
+            <div>
+              <div className="flex items-center gap-2 text-[#C1C1C1]">
+                <FaMusic /> <h2 className="text-lg font-semibold">Musik & Studium</h2>
+              </div>
+              <p>
+                Neben der Technik begleitet mich die <span className="text-[#C1C1C1] font-medium">Musik</span> schon mein ganzes Leben. 2023–2025 studierte ich <span className="text-[#C1C1C1] font-medium">Grundschullehramt mit Hauptfach Musik</span>. 
+                Jetzt starte ich mein Studium in <span className="text-[#C1C1C1] font-medium">Medieninformatik</span> – eine perfekte Verbindung von Kreativität & Technik.
+              </p>
+            </div>
+
+            <div className="italic text-[#C1C1C1]">
+              Ob Musik, Medien oder Code – ich liebe es, Dinge zu gestalten, die Menschen begeistern.
+            </div>
+          </div>
+
+            <div>
+                <div className="flex gap-2 flex-col mt-4">
+                    <h1 className="text-[#C1C1C1] text-3xl mb-4">Meine Skills</h1>
+                    <AboutBar skill="Backend" percentage={85} />
+                    <AboutBar skill="Frontend" percentage={75} />
+                    <AboutBar skill="Linux" percentage={70} />
+                    <AboutBar skill="Datenbanken" percentage={90} />
                 </div>
             </div>
         </div>
-        <div className="w-full flex mt-14 h-26 bg-[#1E1E1E] items-center justify-evenly lg:justify-center lg:gap-40 text-4xl text-[#C1C1C1]">
+        <div className="w-full flex mt-14 h-26 bg-[#1E1E1E] items-center justify-evenly lg:justify-center lg:gap-30 text-4xl text-[#C1C1C1]">
             <FaHtml5 />
             <IoLogoJavascript />
             <FaReact />
             <RiTailwindCssFill />
+            <RiNextjsFill />
+            <DiMysql />
         </div>
       </section>
       <section id="portfolio" className="flex flex-col items-center mt-28 px-8 w-full">

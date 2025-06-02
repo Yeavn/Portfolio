@@ -15,6 +15,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Tim Stoepel - Webentwickler",
   description: "Portfolio von Tim Stoepel, einem Webentwickler aus Deutschland.",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({

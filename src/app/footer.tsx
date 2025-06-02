@@ -18,7 +18,7 @@ const Footer = () => {
           <Link href="/datenschutz" className="hover:text-white transition-colors duration-200">
             Datenschutz
           </Link>
-          <Link href="/kontakt" className="hover:text-white transition-colors duration-200">
+          <Link href="#contact" className="hover:text-white transition-colors duration-200">
             Kontakt
           </Link>
         </nav>
