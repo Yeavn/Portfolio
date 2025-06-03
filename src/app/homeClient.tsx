@@ -16,6 +16,9 @@ export default function HomeClient() {
     const [betreff, setBetreff] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
+    const [name, setName] = useState("");
+    const [honeypot, setHoneypot] = useState("");
+
 
     const [scrolled, setScrolled] = useState(false)
     const scrollThreshold = 50
@@ -35,6 +38,39 @@ export default function HomeClient() {
         window.removeEventListener('scroll', handleScroll);
         };
     }, [handleScroll]);
+
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+        if (honeypot) {
+            alert("Bitte füllen Sie das Formular korrekt aus.");
+            return;
+        }
+        if (!betreff || !email || !message) {
+            alert("Bitte füllen Sie alle Felder aus.");
+            return;
+        } else if (!email.includes("@")) {
+            alert("Bitte geben Sie eine gültige E-Mail-Adresse ein.");
+            return;
+        } else {
+          const res = await fetch('/api/sendMail', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, name, betreff, message }),
+          });
+          if (res.ok) {
+            alert("Ihre Nachricht wurde erfolgreich gesendet!");
+            setBetreff("");
+            setEmail("");
+            setMessage("");
+            setName("");
+          } else {
+            const errorData = await res.json();
+            alert(`Fehler beim Senden der Nachricht: ${errorData.error}`);
+          }
+        }
+    }
 
   return (
     <div className="flex min-h-screen flex-wrap h-100">
@@ -99,7 +135,7 @@ export default function HomeClient() {
                 <FaGraduationCap /> <h2 className="text-lg font-semibold">Lernen als täglicher Begleiter</h2>
               </div>
               <p>
-                Neue Technologien, eigene Projekte oder der Austausch mit anderen Entwickler:innen – ich liebe es, dazuzulernen und über den Tellerrand zu schauen.
+                Neue Technologien, eigene Projekte oder der Austausch mit anderen Entwickler:innen – ich liebe es, dazuzulernen und über den Tellerrand zu schauen. Ich bin immer auf der Suche nach neuen <span className="text-[#C1C1C1] font-medium">Herausforderungen und Möglichkeiten</span>, meine Fähigkeiten zu erweitern und somit offen für <span className="text-[#C1C1C1] font-medium">alle Arten von Anfragen.</span>
               </p>
             </div>
 
@@ -144,7 +180,16 @@ export default function HomeClient() {
         </div>
       </section>
       <section id="contact" className="flex flex-col items-center justify-center py-36 w-full mt-28">
-        <form className="flex flex-col lg:w-4/6 w-5/6 bg-[#353535] p-6 rounded-lg shadow-lg gap-4">
+        <form className="flex flex-col lg:w-4/6 w-5/6 bg-[#353535] p-6 rounded-lg shadow-lg gap-4" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="website"
+              value={honeypot}
+              onChange={e => setHoneypot(e.target.value)}
+              style={{ display: "none" }} // Versteckt für User
+              tabIndex={-1}
+              autoComplete="off"
+            />
             <h1 className="text-[#C1C1C1] w-full text-2xl">Kontaktformular</h1>
             <label htmlFor="email" className="text-[#c1c1c195] mb-[-10px]">E-Mail</label>
             <input
@@ -154,6 +199,15 @@ export default function HomeClient() {
               placeholder="Geben Sie Ihre Email ein..."
               value={email}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+            />
+            <label htmlFor="email" className="text-[#c1c1c195] mb-[-10px]">Name</label>
+            <input
+              type="text"
+              id="name"
+              className="bg-[#878787b3] text-[#C1C1C1] rounded-md shadow-lg py-1 px-2 border-1 border-transparent outline-none focus:border-[#FD6F00] transition-all duration-200"
+              placeholder="Geben Sie Ihre Email ein..."
+              value={name}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
             />
             <label htmlFor="betreff" className="text-[#c1c1c195] mb-[-10px]">Betreff</label>
             <input type="text" id="betreff" className="bg-[#878787b3] text-[#C1C1C1] rounded-md shadow-lg py-1 px-2 border-1 border-transparent outline-none focus:border-[#FD6F00] transition-all duration-200" placeholder="Geben Sie Ihren Betreff ein..." value={betreff}
