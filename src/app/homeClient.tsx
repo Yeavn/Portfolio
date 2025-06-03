@@ -218,7 +218,7 @@ export default function HomeClient() {
           id="home"
           className="flex w-full flex-col lg:flex-row-reverse justify-center items-center h-4/5 justify-self-center mt-18 lg:gap-32"
         >
-          <img src="/icons/avatar.svg" className="max-w-lg lg:w-1/3" alt="" />
+          <img src="/icons/Avatar.png" className="max-w-[350px] lg:w-1/3 rounded-full shadow-xl" alt="" />
           <div className="flex gap-4 lg:w-1/3 w-5/6 flex-col mt-4">
             <h3 className="text-xl text-[#878787]">Hi, ich bin</h3>
             <h2 className="text-2xl text-[#C7C5C5]">Tim Stoepel</h2>
@@ -264,8 +264,8 @@ export default function HomeClient() {
         className="w-full min-h-screen flex items-center flex-col"
       >
         <img
-          src="/icons/aboutAvatar.svg"
-          className="max-w-[225px] w-1/2 mt-14 "
+          src="/icons/aboutAvatar.png"
+          className="max-w-[600px] w-full mt-14 "
           alt=""
         />
         <div className="w-5/6 lg:w-1/2 flex flex-col gap-4 mt-12">
