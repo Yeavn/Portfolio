@@ -200,8 +200,8 @@ export default function HomeClient() {
             <header className="flex justify-end items-center flex-wrap w-full py-[3.5px] px-4">
               <img src="/icons/cross.svg" alt="" onClick={handleMenuClose} />
             </header>
-            <nav className="w-full h-screen px-5 flex justify-center">
-              <ul className="w-full flex flex-col gap-22 mt-22 text-3xl text-[#C8C8C8] font-semibold items-center">
+            <nav className="w-full min-h-screen px-5 flex justify-center">
+              <ul className="w-full flex flex-col gap-18 mt-22 text-3xl text-[#C8C8C8] font-semibold items-center">
                 <li className="hover:text-[#c8c8c8b8] cursor-pointer">
                   <a href="#home" onClick={handleMenuClose}>
                     Home
