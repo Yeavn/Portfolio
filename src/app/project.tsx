@@ -9,8 +9,7 @@ export default function Project({project, img, descrtiption, demoLink}: {project
             <div className="bg-[#353535] w-full p-8 rounded-b-lg">
                 <h1 className="text-xl text-[#C7C5C5]">{project}</h1>
                 <p className="text-[#878787] mt-2">{descrtiption}</p>
-                {/* <div className="mt-4"><a className=" text-[#FD6F00]" href={demoLink}><CiLocationArrow1 className="inline mr-2"  />Demo ansehen</a></div> */}
-                <div className="mt-4"><p className=" text-[#FD6F00]"><CiLocationArrow1 className="inline mr-2"  />Demo folgt</p></div>
+                <div className="mt-4"><a className=" text-[#FD6F00]" href={demoLink}><CiLocationArrow1 className="inline mr-2"  />Demo ansehen</a></div>
             </div>
         </div>
     )
