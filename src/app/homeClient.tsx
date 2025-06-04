@@ -430,7 +430,7 @@ export default function HomeClient() {
           <div className="bg-[#232323] rounded-xl shadow-lg p-8 flex flex-col items-center w-80 border border-[#444] hover:border-[#FD6F00] transition-all duration-200 price-card">
             <FaReact className="text-4xl text-[#FD6F00] mb-4" />
             <h2 className="text-2xl text-[#C1C1C1] font-semibold mb-2">Business</h2>
-            <p className="text-[#c1c1c1b0] mb-4 text-center">
+            <p className="text-[#c1c1c1b0] mb-10 text-center">
               Umfangreiche Website oder Web-App. Für Unternehmen, Vereine & größere Projekte.
             </p>
             <div className="text-3xl font-bold text-[#FD6F00] mb-2">ab 999€</div>
