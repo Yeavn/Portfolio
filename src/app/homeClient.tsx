@@ -96,6 +96,18 @@ export default function HomeClient() {
       },
     });
 
+    gsap.from("#pricing", {
+    opacity: 0,
+    y: 30,
+    duration: 1,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: "#pricing",
+      start: "top 90%",
+    },
+  });
+
+
     gsap.from("#contact form", {
       opacity: 0,
       y: 60,
@@ -203,6 +215,11 @@ export default function HomeClient() {
                 <li className="hover:text-[#c8c8c8b8] cursor-pointer">
                   <a href="#portfolio" onClick={handleMenuClose}>
                     Portfolio
+                  </a>
+                </li>
+                <li className="hover:text-[#c8c8c8b8] cursor-pointer">
+                  <a href="#pricing" onClick={handleMenuClose}>
+                    Preise
                   </a>
                 </li>
                 <li className="hover:text-[#c8c8c8b8] cursor-pointer">
@@ -379,6 +396,86 @@ export default function HomeClient() {
           />
         </div>
       </section>
+      <div className="w-full flex items-center justify-center">
+        <hr className="w-2/5 border-[#444] my-12 shadow-sm mt-48" />
+      </div>
+      <section id="pricing" className="flex flex-col items-center justify-center w-full min-h-screen">
+        <div>
+          <h1 className="text-[#c1c1c1] font-bold text-3xl mt-24 mb-10">Preise</h1>
+        </div>
+        <div className="flex flex-wrap gap-10 justify-center w-full max-w-6xl mt-12">
+
+          <div className="bg-[#232323] rounded-xl shadow-lg p-8 flex flex-col items-center w-80 border border-[#444] hover:border-[#FD6F00] transition-all duration-200 price-card">
+            <FaCode className="text-4xl text-[#FD6F00] mb-4" />
+            <h2 className="text-2xl text-[#C1C1C1] font-semibold mb-2">Starter</h2>
+            <p className="text-[#c1c1c1b0] mb-4 text-center">
+              Kleine Website, Portfolio oder Landingpage. Perfekt für Einzelpersonen & kleine Unternehmen.
+            </p>
+            <div className="text-3xl font-bold text-[#FD6F00] mb-2">ab 399€</div>
+            <ul className="text-[#C1C1C1] text-sm mb-6 space-y-1">
+              <li>✓ 1–3 Seiten</li>
+              <li>✓ Responsive Design</li>
+              <li>✓ Kontaktformular</li>
+              <li>✓ SEO-Basics</li>
+            </ul>
+            <a
+              href="#contact"
+              className="bg-[#FD6F00] text-white px-6 py-2 rounded-md shadow hover:bg-[#fd6e00db] transition-all duration-200 font-semibold"
+              onClick={() => setBetreff("Anfrage Starter Paket")}
+            >
+              Anfragen
+            </a>
+          </div>
+
+          <div className="bg-[#232323] rounded-xl shadow-lg p-8 flex flex-col items-center w-80 border border-[#444] hover:border-[#FD6F00] transition-all duration-200 price-card">
+            <FaReact className="text-4xl text-[#FD6F00] mb-4" />
+            <h2 className="text-2xl text-[#C1C1C1] font-semibold mb-2">Business</h2>
+            <p className="text-[#c1c1c1b0] mb-4 text-center">
+              Umfangreiche Website oder Web-App. Für Unternehmen, Vereine & größere Projekte.
+            </p>
+            <div className="text-3xl font-bold text-[#FD6F00] mb-2">ab 999€</div>
+            <ul className="text-[#C1C1C1] text-sm mb-6 space-y-1">
+              <li>✓ 4+ Seiten / Module</li>
+              <li>✓ Individuelles Design</li>
+              <li>✓ Interaktive Features</li>
+              <li>✓ Performance-Optimierung</li>
+            </ul>
+            <a
+              href="#contact"
+              className="bg-[#FD6F00] text-white px-6 py-2 rounded-md shadow hover:bg-[#fd6e00db] transition-all duration-200 font-semibold"
+              onClick={() => setBetreff("Anfrage Business Paket")}
+            >
+              Anfragen
+            </a>
+          </div>
+          
+          <div className="bg-[#232323] rounded-xl shadow-lg p-8 flex flex-col items-center w-80 border border-[#444] hover:border-[#FD6F00] transition-all duration-200 price-card">
+            <FaCode className="text-4xl text-[#FD6F00] mb-4" />
+            <h2 className="text-2xl text-[#C1C1C1] font-semibold mb-2">Individual</h2>
+            <p className="text-[#c1c1c1b0] mb-4 text-center">
+              Individuelle Lösungen, Schnittstellen, Datenbanken oder Sonderwünsche? Schreibe mir!
+            </p>
+            <div className="text-3xl font-bold text-[#FD6F00] mb-2">auf Anfrage</div>
+            <ul className="text-[#C1C1C1] text-sm mb-6 space-y-1">
+              <li>✓ Maßgeschneiderte Entwicklung</li>
+              <li>✓ Beratung & Konzeption</li>
+              <li>✓ API-Anbindung</li>
+              <li>✓ u.v.m.</li>
+            </ul>
+            <a
+              href="#contact"
+              className="bg-[#FD6F00] text-white px-6 py-2 rounded-md shadow hover:bg-[#fd6e00db] transition-all duration-200 font-semibold"
+              onClick={() => setBetreff("Anfrage Individual Paket")}
+            >
+              Anfragen
+            </a>
+          </div>
+        </div>
+        <div className="text-[#c1c1c1b0] text-sm mt-8 text-center max-w-2xl">
+          Alle Preise sind Richtwerte und können je nach Aufwand variieren. Gerne erstelle ich ein individuelles Angebot!
+        </div>
+      </section>
+
       <section
         id="contact"
         className="flex flex-col items-center justify-center py-36 w-full mt-28"
