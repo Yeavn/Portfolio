@@ -33,6 +33,8 @@ export default function HomeClient() {
   const [scrolled, setScrolled] = useState(false);
   const scrollThreshold = 50;
 
+  const [aboutExpanded, setAboutExpanded] = useState(false); 
+
   const handleScroll = useCallback(() => {
     if (window.scrollY > scrollThreshold) {
       setScrolled(true);
@@ -288,7 +290,7 @@ export default function HomeClient() {
         <div className="w-5/6 lg:w-1/2 flex flex-col gap-4 mt-12">
           <h1 className="text-[#C1C1C1] text-3xl">Über mich</h1>
           <div className="text-[#878787] space-y-6">
-            <div>
+            <div className={aboutExpanded ? "" : "line-clamp-4"}>
               <div className="flex items-center gap-2 text-[#C1C1C1]">
                 <FaCode />{" "}
                 <h2 className="text-lg font-semibold">
@@ -356,6 +358,13 @@ export default function HomeClient() {
               Menschen begeistern.
             </div>
           </div>
+
+          <button
+            className="text-[#FD6F00] hover:underline mt-2"
+            onClick={() => setAboutExpanded((v) => !v)}
+          >
+            {aboutExpanded ? "Weniger anzeigen" : "Mehr anzeigen"}
+          </button>
 
           <div>
             <div className="flex gap-2 flex-col mt-4">
