@@ -14,6 +14,8 @@ import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoJavascript } from "react-icons/io5";
 import { RiTailwindCssFill, RiNextjsFill } from "react-icons/ri";
 import { DiMysql } from "react-icons/di";
+import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
+
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -33,7 +35,9 @@ export default function HomeClient() {
   const [scrolled, setScrolled] = useState(false);
   const scrollThreshold = 50;
 
-  const [aboutExpanded, setAboutExpanded] = useState(false); 
+  const [aboutExpanded1, setAboutExpanded1] = useState(false); 
+  const [aboutExpanded2, setAboutExpanded2] = useState(false); 
+  const [aboutExpanded3, setAboutExpanded3] = useState(false); 
 
   const handleScroll = useCallback(() => {
     if (window.scrollY > scrollThreshold) {
@@ -219,7 +223,7 @@ export default function HomeClient() {
                     Portfolio
                   </a>
                 </li>
-                <li className="hover:text-[#c8c8c8b8] cursor-pointer">
+                <li className="hover:text-[#c8c8c8b8] cursor-pointer hidden">
                   <a href="#pricing" onClick={handleMenuClose}>
                     Preise
                   </a>
@@ -242,7 +246,7 @@ export default function HomeClient() {
             <h3 className="text-xl text-[#878787]">Hi, ich bin</h3>
             <h2 className="text-2xl text-[#C7C5C5]">Tim Stoepel</h2>
             <h1 className="text-4xl hero-gradient">Webentwickler</h1>
-            <div className="w-full flex gap-6 items-center">
+            <div className="w-full flex gap-10 items-center">
               <div className="bg-[#353535] rounded-full w-[35px] aspect-square border-1 border-[#878787] flex justify-center items-center">
                 <FaInstagram className="text-[#C8C8C8] " />
               </div>
@@ -253,10 +257,6 @@ export default function HomeClient() {
 
               <div className="bg-[#353535] rounded-full w-[35px] aspect-square border-1 border-[#878787] flex justify-center items-center">
                 <FaGithub className="text-[#C8C8C8] " />
-              </div>
-
-              <div className="bg-[#353535] rounded-full w-[35px] aspect-square border-1 border-[#878787] flex justify-center items-center">
-                <FaXTwitter className="text-[#C8C8C8] " />
               </div>
             </div>
             <div className="mb-4 flex flex-col gap-3">
@@ -290,12 +290,13 @@ export default function HomeClient() {
         <div className="w-5/6 lg:w-1/2 flex flex-col gap-4 mt-12">
           <h1 className="text-[#C1C1C1] text-3xl">Über mich</h1>
           <div className="text-[#878787] space-y-6">
-            <div className={aboutExpanded ? "" : "line-clamp-4"}>
+            <div className={aboutExpanded1 ? "" : "line-clamp-1"}>
               <div className="flex items-center gap-2 text-[#C1C1C1]">
                 <FaCode />{" "}
                 <h2 className="text-lg font-semibold">
                   Mein Einstieg in die Technik
                 </h2>
+                <button className="text-xl" onClick={() => setAboutExpanded1(!aboutExpanded1)}>{aboutExpanded1 ? <MdArrowDropUp /> : <MdArrowDropDown />}</button>
               </div>
               <p>
                 Mit 12 Jahren fing alles an – eigene Erweiterungen (Mods) für{" "}
@@ -311,12 +312,13 @@ export default function HomeClient() {
               </p>
             </div>
 
-            <div>
+            <div className={aboutExpanded2 ? "" : "line-clamp-1"}>
               <div className="flex items-center gap-2 text-[#C1C1C1]">
                 <FaGraduationCap />{" "}
                 <h2 className="text-lg font-semibold">
                   Lernen als täglicher Begleiter
                 </h2>
+                <button className="text-xl" onClick={() => setAboutExpanded2(!aboutExpanded2)}>{aboutExpanded2 ? <MdArrowDropUp /> : <MdArrowDropDown />}</button>
               </div>
               <p>
                 Neue Technologien, eigene Projekte oder der Austausch mit
@@ -333,10 +335,11 @@ export default function HomeClient() {
               </p>
             </div>
 
-            <div>
+            <div className={aboutExpanded3 ? "" : "line-clamp-1"}>
               <div className="flex items-center gap-2 text-[#C1C1C1]">
                 <FaMusic />{" "}
                 <h2 className="text-lg font-semibold">Musik & Studium</h2>
+                <button className="text-xl" onClick={() => setAboutExpanded3(!aboutExpanded3)}>{aboutExpanded3 ? <MdArrowDropUp /> : <MdArrowDropDown />}</button>
               </div>
               <p>
                 Neben der Technik begleitet mich die{" "}
@@ -358,13 +361,6 @@ export default function HomeClient() {
               Menschen begeistern.
             </div>
           </div>
-
-          <button
-            className="text-[#FD6F00] hover:underline mt-2"
-            onClick={() => setAboutExpanded((v) => !v)}
-          >
-            {aboutExpanded ? "Weniger anzeigen" : "Mehr anzeigen"}
-          </button>
 
           <div>
             <div className="flex gap-2 flex-col mt-4">
@@ -408,7 +404,7 @@ export default function HomeClient() {
       <div className="w-full flex items-center justify-center">
         <hr className="w-2/5 border-[#444] my-12 shadow-sm mt-48" />
       </div>
-      <section id="pricing" className="flex flex-col items-center justify-center w-full min-h-screen">
+      <section id="pricing" className="flex-col items-center justify-center w-full min-h-screen hidden">
         <div>
           <h1 className="text-[#c1c1c1] font-bold text-3xl mt-24 mb-10">Preise</h1>
         </div>
@@ -487,7 +483,7 @@ export default function HomeClient() {
 
       <section
         id="contact"
-        className="flex flex-col items-center justify-center py-36 w-full mt-28"
+        className="flex flex-col items-center justify-center py-36 w-full"
       >
         <form
           className="flex flex-col lg:w-4/6 w-5/6 bg-[#353535] p-6 rounded-lg shadow-lg gap-4"
