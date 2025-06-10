@@ -356,6 +356,13 @@ export default function HomeClient() {
               </p>
             </div>
 
+            <div className="bg-[#232323] rounded-lg p-4 mt-8 text-[#C1C1C1] text-center shadow">
+              <span className="font-semibold text-[#FD6F00]">Aktuell</span><br />  
+              Ich suche ein Team, in dem ich mich fachlich und persönlich weiterentwickeln und neue soziale Kontakte knüpfen kann.  
+              <br />
+              <span className="text-[#C1C1C1b0]">Freelancing-Anfragen sind aber weiterhin willkommen!</span>
+            </div>
+
             <div className="italic text-[#C1C1C1]">
               Ob Musik, Medien oder Code – ich liebe es, Dinge zu gestalten, die
               Menschen begeistern.
