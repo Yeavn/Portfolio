@@ -16,6 +16,9 @@ import { RiTailwindCssFill, RiNextjsFill } from "react-icons/ri";
 import { DiMysql } from "react-icons/di";
 import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 
+import DemoCard from "./DemoCard";
+
+
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -395,17 +398,12 @@ export default function HomeClient() {
         <h1 className="text-3xl font-bold text-[#C1C1C1] mb-8">Portfolio</h1>
         <div className="flex flex-wrap justify-center gap-16 w-full max-w-6xl mt-8 project-list">
           <Project
-            project="Fotorallye"
-            img="fotorallye.svg"
-            descrtiption="Web-App für interaktive Foto-Challenges mit Aufgaben, Punktesystem und Teamfunktion. Entwickelt mit NextJS und Supabase, optimiert für mobile Nutzung bei Events und Gruppenaktionen."
-            demoLink=""
-          />
-          <Project
             project="Videospiele Datenbank"
             img="videogames-db.png"
             descrtiption="Eine moderne Videospiele-Datenbank, entwickelt mit Next.js und Tailwind CSS, die mithilfe der RAWG API tausende Games durchsuchen und entdecken lässt – inklusive detaillierter Infos, Plattformen und Bewertungen."
             demoLink="https://videogames-db.vercel.app/"
           />
+          
         </div>
       </section>
       <div className="w-full flex items-center justify-center">
