@@ -9,14 +9,13 @@ import {
   FaCode,
   FaMusic,
   FaGraduationCap,
+  FaDownload
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoJavascript } from "react-icons/io5";
 import { RiTailwindCssFill, RiNextjsFill } from "react-icons/ri";
 import { DiMysql } from "react-icons/di";
 import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
-
-import DemoCard from "./DemoCard";
 
 
 import gsap from "gsap";
@@ -268,7 +267,7 @@ export default function HomeClient() {
                 href="#contact"
                 onClick={() => setBetreff("Anfrage Werksstudent 20h/Woche")}
               >
-                Stellen Sie mich ein
+                Jobanfrage
               </a>
               <a
                 className="w-full bg-transparent py-2 rounded-md shadow-lg text-white border-1 border-[#878787] hover:border-[#878787c6] transition-all duration-200 text-center"
@@ -374,11 +373,12 @@ export default function HomeClient() {
 
           <div>
             <div className="flex gap-2 flex-col mt-4">
-              <h1 className="text-[#C1C1C1] text-3xl mb-4">Meine Skills</h1>
-              <AboutBar skill="Backend" percentage={85} />
-              <AboutBar skill="Frontend" percentage={75} />
-              <AboutBar skill="Linux" percentage={70} />
-              <AboutBar skill="Datenbanken" percentage={90} />
+              <h1 className="text-[#C1C1C1] text-xl mb-4"></h1>
+              <a href="/lebenslauf.pdf"
+              // target="_blank"
+              // rel="noopener noreferrer"
+              download
+              className="sm:w-1/2 w-full self-center py-2 px-4 bg-[#FD6F00] text-white hover:bg-[#fd6e00db] transition-all duration-200 rounded-lg shadow-lg mt-6 text-center flex items-center justify-center"><FaDownload className="mr-2" /> Lebenslauf herunterladen</a>
             </div>
           </div>
         </div>
@@ -400,8 +400,9 @@ export default function HomeClient() {
           <Project
             project="Videospiele Datenbank"
             img="videogames-db.png"
-            descrtiption="Eine moderne Videospiele-Datenbank, entwickelt mit Next.js und Tailwind CSS, die mithilfe der RAWG API tausende Games durchsuchen und entdecken lässt – inklusive detaillierter Infos, Plattformen und Bewertungen."
+            descrtiption="Ein modernes Webprojekt, das mit NextJS und TailwindCSS umgesetzt wurde. Es nutzt die RAWG API, um tausende Games zu durchsuchen, inklusive Bewertungen und Infos."
             demoLink="https://videogames-db.vercel.app/"
+            github="https://github.com/Yeavn/videogame-api"
           />
           
         </div>
@@ -504,6 +505,7 @@ export default function HomeClient() {
             autoComplete="off"
           />
           <h1 className="text-[#C1C1C1] w-full text-2xl">Kontaktformular</h1>
+          <h2 className="text-[#c1c1c1b0]">Du hast Fragen, zu einem Projekt oder suchst Unterstützung im Entwickler-Team? Schreib mir gern!</h2>
           <label htmlFor="email" className="text-[#c1c1c195] mb-[-10px]">
             E-Mail
           </label>
@@ -511,7 +513,7 @@ export default function HomeClient() {
             type="email"
             id="email"
             className="bg-[#878787b3] text-[#C1C1C1] rounded-md shadow-lg py-1 px-2 border-1 border-transparent outline-none focus:border-[#FD6F00] transition-all duration-200"
-            placeholder="Geben Sie Ihre Email ein..."
+            placeholder="Gib deine Email ein..."
             value={email}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setEmail(e.target.value)
@@ -524,7 +526,7 @@ export default function HomeClient() {
             type="text"
             id="name"
             className="bg-[#878787b3] text-[#C1C1C1] rounded-md shadow-lg py-1 px-2 border-1 border-transparent outline-none focus:border-[#FD6F00] transition-all duration-200"
-            placeholder="Geben Sie Ihre Email ein..."
+            placeholder="Gib deinen Namen ein..."
             value={name}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setName(e.target.value)
@@ -537,7 +539,7 @@ export default function HomeClient() {
             type="text"
             id="betreff"
             className="bg-[#878787b3] text-[#C1C1C1] rounded-md shadow-lg py-1 px-2 border-1 border-transparent outline-none focus:border-[#FD6F00] transition-all duration-200"
-            placeholder="Geben Sie Ihren Betreff ein..."
+            placeholder="Gib deinen Betreff ein..."
             value={betreff}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setBetreff(e.target.value)
@@ -550,7 +552,7 @@ export default function HomeClient() {
             rows={5}
             id="message"
             className="bg-[#878787b3] text-[#C1C1C1] rounded-md shadow-lg py-1 px-2 border-1 border-transparent outline-none focus:border-[#FD6F00] transition-all duration-200"
-            placeholder="Geben Sie Ihre Nachricht ein..."
+            placeholder="Gib deine Nachricht ein..."
             value={message}
             onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
               setMessage(e.target.value)
