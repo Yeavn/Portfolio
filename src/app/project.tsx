@@ -23,7 +23,13 @@ export default function Project({
           className="w-4/5 rounded-lg shadow-lg"
         />
       </div>
-      <div className="bg-[#353535] w-full p-8 rounded-b-lg h-[300px]">
+      <div className="bg-[#353535] w-full p-8 rounded-b-lg h-[250px] overflow-scroll scrollbar-hide">
+        <div
+          className="absolute inset-0 z-10 pointer-events-none"
+          style={{
+            boxShadow: "inset 0 -30px 20px -20px rgba(0, 0, 0, 0.5)",
+          }}
+        ></div>
         <h1 className="text-xl text-[#C7C5C5]">{project}</h1>
         <p className="text-[#878787] mt-2">{descrtiption}</p>
         <div className="mt-4">

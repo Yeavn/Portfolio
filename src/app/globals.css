@@ -48,3 +48,12 @@ body {
     background: var(--Gradient, linear-gradient(90deg, #A04600 0%, #FD6F00 100%));
 
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}
