@@ -13,8 +13,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tim Stoepel - Webentwickler",
-  description: "Portfolio von Tim Stoepel, einem Webentwickler aus Deutschland.",
+  title: "Tim Stoepel I Webentwickler",
+  description:
+    "Webentwickler mit Leidenschaft seit Jugendtagen: Von Minecraft-Mods über FiveM bis zu modernen Webprojekten. Offen für neue Ideen & Anfragen.",
+  keywords: [
+    "Webdesign",
+    "Webentwicklung",
+    "Leipzig",
+    "Portfolio",
+    "Tim Stoepel",
+  ],
+  openGraph: {
+    title: "Tim Stoepel I Webentwickler",
+    description:
+      "Webentwickler mit Leidenschaft seit Jugendtagen: Von Minecraft-Mods über FiveM bis zu modernen Webprojekten. Offen für neue Ideen & Anfragen.",
+    url: "https://tim-stoepel.de/",
+    siteName: "Tim Stoepel - Portfolio",
+    locale: "de_DE",
+    type: "website",
+  },
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
