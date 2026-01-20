@@ -457,6 +457,13 @@ export default function HomeClient() {
               descrtiption="Für den Leipziger Chor nota bene habe ich eine moderne Vereinswebsite mit WordPress umgesetzt. Der Fokus lag auf einer klaren Struktur, einfacher Pflege durch das Chorteam und einer ansprechenden Darstellung von Konzertterminen, Neuigkeiten und dem Chorprofil."
               demoLink="https://nota-bene-leipzig.de/"
             />
+
+            <Project
+              project="DMX-Lichtshow – Musikbasierte Programmierung"
+              img="lichtshow.png"
+              descrtiption="Im Rahmen einer DMX-Lichttechnik-Aufgabe habe ich mehrere 30-sekündige Lichtshows mit vier adressierten Scheinwerfern programmiert. Die Sequenzen wurden musikalisch synchron zu „Billie Jean“ von Michael Jackson sowie „September“ umgesetzt. Dabei lag der Fokus auf präzisem Timing, klarer Farbgestaltung und dynamischen Bewegungen. Die Shows wurden als Video inklusive Audio dokumentiert."
+              demoLink="https://youtu.be/2PCWAtOEuUQ"
+            />
           </div>
         </section>
         <div className="w-full flex items-center justify-center">
