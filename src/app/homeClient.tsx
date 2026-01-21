@@ -462,7 +462,7 @@ export default function HomeClient() {
             <Project
               project="DMX-Lichtshow"
               img="lichtshow.png"
-              descrtiption="Im Rahmen einer DMX-Lichttechnik-Aufgabe habe ich mehrere 30-sekündige Lichtshows mit vier adressierten Scheinwerfern programmiert. Die Sequenzen wurden musikalisch synchron zu „Billie Jean“ von Michael Jackson sowie „September“ von Earth, Wind and Fire umgesetzt."
+              descrtiption="Im Rahmen einer DMX-Lichttechnik-Aufgabe habe ich mehrere 30-sekündige Lichtshows mit vier adressierten Scheinwerfern programmiert. Die DMX-Steuerung wurde dabei mit einem Arduino in C++ umgesetzt und musikalisch synchron zu „Billie Jean“ von Michael Jackson sowie „September“ von Earth, Wind & Fire programmiert."
               demoLink="https://youtu.be/2PCWAtOEuUQ"
             />
           </div>
