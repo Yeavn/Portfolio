@@ -445,21 +445,6 @@ export default function HomeClient() {
           <h1 className="text-3xl font-bold text-[#C1C1C1] mb-8">Portfolio</h1>
           <div className="flex flex-wrap justify-center gap-16 w-full max-w-6xl mt-8 project-list">
             <Project
-              project="Videospiele Datenbank"
-              img="videogames-db.png"
-              descrtiption="Ein modernes Webprojekt, das mit NextJS und TailwindCSS umgesetzt wurde. Es nutzt die RAWG API, um tausende Games zu durchsuchen, inklusive Bewertungen und Infos."
-              demoLink="https://videogames-db.vercel.app/"
-              github="https://github.com/Yeavn/videogame-api"
-            />
-
-            <Project
-              project="nota bene leipzig – Chor-Website"
-              img="nota-bene.png"
-              descrtiption="Für den Leipziger Chor nota bene habe ich eine moderne Vereinswebsite mit WordPress umgesetzt. Der Fokus lag auf einer klaren Struktur, einfacher Pflege durch das Chorteam und einer ansprechenden Darstellung von Konzertterminen, Neuigkeiten und dem Chorprofil."
-              demoLink="https://nota-bene-leipzig.de/"
-            />
-
-            <Project
               project="DMX-Lichtshow"
               img="lichtshow.png"
               descrtiption="Im Rahmen einer DMX-Lichttechnik-Aufgabe habe ich mehrere 30-sekündige Lichtshows mit vier adressierten Scheinwerfern programmiert. Die DMX-Steuerung wurde dabei mit einem Arduino in C++ umgesetzt und musikalisch synchron zu „Billie Jean“ von Michael Jackson sowie „September“ von Earth, Wind & Fire programmiert."
