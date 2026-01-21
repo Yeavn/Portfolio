@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Tim Stoepel I Informatikstudent",
   description:
-    "Webentwickler mit Leidenschaft seit Jugendtagen: Von Minecraft-Mods über FiveM bis zu modernen Webprojekten. Offen für neue Ideen & Anfragen.",
+    "Entwickler mit Leidenschaft seit Jugendtagen: Von Minecraft-Mods über FiveM bis zu modernen Webprojekten. Offen für neue Ideen & Anfragen.",
   keywords: [
     "Webdesign",
     "Webentwicklung",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Tim Stoepel I Informatikstudent",
     description:
-      "Webentwickler mit Leidenschaft seit Jugendtagen: Von Minecraft-Mods über FiveM bis zu modernen Webprojekten. Offen für neue Ideen & Anfragen.",
+      "Entwickler mit Leidenschaft seit Jugendtagen: Von Minecraft-Mods über FiveM bis zu modernen Webprojekten. Offen für neue Ideen & Anfragen.",
     url: "https://tim-stoepel.de/",
     siteName: "Tim Stoepel - Portfolio",
     locale: "de_DE",
