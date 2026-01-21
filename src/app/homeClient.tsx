@@ -5,7 +5,7 @@ import {
   FaInstagram,
   FaLinkedin,
   FaGithub,
-  FaHtml5,
+  FaPython,
   FaReact,
   FaCode,
   FaMusic,
@@ -17,6 +17,7 @@ import { IoLogoJavascript } from "react-icons/io5";
 import { RiTailwindCssFill, RiNextjsFill } from "react-icons/ri";
 import { DiMysql } from "react-icons/di";
 import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
+import { PiFileCppLight } from "react-icons/pi";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -249,9 +250,9 @@ export default function HomeClient() {
               alt=""
             />
             <div className="flex gap-4 lg:w-1/3 w-5/6 flex-col mt-4">
-              <h3 className="text-xl text-[#878787]">Hi, ich bin</h3>
+              <h3 className="text-xl text-[#878787]">Hey, ich bin</h3>
               <h2 className="text-2xl text-[#C7C5C5]">Tim Stoepel</h2>
-              <h1 className="text-4xl hero-gradient">Webentwickler</h1>
+              <h1 className="text-3xl sm:text-4xl hero-gradient">Informatikstudent</h1>
               <div className="w-full flex gap-10 items-center">
                 <div
                   className="bg-[#353535] rounded-full w-[35px] aspect-square border-1 border-[#878787] flex justify-center items-center cursor-pointer"
@@ -390,7 +391,7 @@ export default function HomeClient() {
                   <span className="text-[#C1C1C1] font-medium">
                     Grundschullehramt mit Hauptfach Musik
                   </span>
-                  . Jetzt starte ich mein Studium in{" "}
+                  . Seit dem WiSe 2025/2026 studiere ich{" "}
                   <span className="text-[#C1C1C1] font-medium">Informatik</span>{" "}
                   – eine perfekte Verbindung von Kreativität & Technik.
                 </p>
@@ -429,9 +430,9 @@ export default function HomeClient() {
             </div>
           </div>
           <div className="w-full flex mt-14 h-26 bg-[#1E1E1E] items-center justify-evenly lg:justify-center lg:gap-30 text-4xl text-[#C1C1C1]">
-            <FaHtml5 />
-            <IoLogoJavascript />
-            <FaReact />
+            <PiFileCppLight />
+            <FaPython />
+            <IoLogoJavascript /> 
             <RiTailwindCssFill />
             <RiNextjsFill />
             <DiMysql />
@@ -459,9 +460,9 @@ export default function HomeClient() {
             />
 
             <Project
-              project="DMX-Lichtshow – Musikbasierte Programmierung"
+              project="DMX-Lichtshow"
               img="lichtshow.png"
-              descrtiption="Im Rahmen einer DMX-Lichttechnik-Aufgabe habe ich mehrere 30-sekündige Lichtshows mit vier adressierten Scheinwerfern programmiert. Die Sequenzen wurden musikalisch synchron zu „Billie Jean“ von Michael Jackson sowie „September“ von Earth, Wind and Fire umgesetzt. Dabei lag der Fokus auf präzisem Timing, klarer Farbgestaltung und dynamischen Bewegungen. Die Shows wurden als Video inklusive Audio dokumentiert."
+              descrtiption="Im Rahmen einer DMX-Lichttechnik-Aufgabe habe ich mehrere 30-sekündige Lichtshows mit vier adressierten Scheinwerfern programmiert. Die Sequenzen wurden musikalisch synchron zu „Billie Jean“ von Michael Jackson sowie „September“ von Earth, Wind and Fire umgesetzt."
               demoLink="https://youtu.be/2PCWAtOEuUQ"
             />
           </div>
