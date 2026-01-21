@@ -13,12 +13,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tim Stoepel I Webentwickler",
+  title: "Tim Stoepel I Informatikstudent",
   description:
     "Webentwickler mit Leidenschaft seit Jugendtagen: Von Minecraft-Mods über FiveM bis zu modernen Webprojekten. Offen für neue Ideen & Anfragen.",
   keywords: [
     "Webdesign",
     "Webentwicklung",
+    "Informatik",
+    "Informatikstudent",
     "Leipzig",
     "Portfolio",
     "Tim Stoepel",
