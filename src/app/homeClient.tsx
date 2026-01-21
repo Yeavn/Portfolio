@@ -461,7 +461,7 @@ export default function HomeClient() {
             <Project
               project="DMX-Lichtshow – Musikbasierte Programmierung"
               img="lichtshow.png"
-              descrtiption="Im Rahmen einer DMX-Lichttechnik-Aufgabe habe ich mehrere 30-sekündige Lichtshows mit vier adressierten Scheinwerfern programmiert. Die Sequenzen wurden musikalisch synchron zu „Billie Jean“ von Michael Jackson sowie „September“ umgesetzt. Dabei lag der Fokus auf präzisem Timing, klarer Farbgestaltung und dynamischen Bewegungen. Die Shows wurden als Video inklusive Audio dokumentiert."
+              descrtiption="Im Rahmen einer DMX-Lichttechnik-Aufgabe habe ich mehrere 30-sekündige Lichtshows mit vier adressierten Scheinwerfern programmiert. Die Sequenzen wurden musikalisch synchron zu „Billie Jean“ von Michael Jackson sowie „September“ von Earth, Wind and Fire umgesetzt. Dabei lag der Fokus auf präzisem Timing, klarer Farbgestaltung und dynamischen Bewegungen. Die Shows wurden als Video inklusive Audio dokumentiert."
               demoLink="https://youtu.be/2PCWAtOEuUQ"
             />
           </div>
