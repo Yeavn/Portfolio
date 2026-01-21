@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     "Tim Stoepel",
   ],
   openGraph: {
-    title: "Tim Stoepel I Webentwickler",
+    title: "Tim Stoepel I Informatikstudent",
     description:
       "Webentwickler mit Leidenschaft seit Jugendtagen: Von Minecraft-Mods über FiveM bis zu modernen Webprojekten. Offen für neue Ideen & Anfragen.",
     url: "https://tim-stoepel.de/",
