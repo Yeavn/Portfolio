@@ -90,11 +90,67 @@ const attractions = [
   },
 ];
 
+const breakfastOptions = [
+  {
+    name: "Café Savoy",
+    type: "Wiener Café",
+    price: "€€€",
+    description:
+      "Eines der schönsten Cafés der Stadt – neobarocke Decke, frische Croissants und tschechische Eier­gerichte. Das perfekte erste Frühstück in Prag.",
+    maps: "https://maps.app.goo.gl/PM6HiGDJUiY4gEbw9",
+    image:
+      "https://cdn.praguecitytourism.city/2024/03/13090410/savoy-2.jpg",
+    emoji: "☕",
+    tip: "Reservierung empfohlen! Beliebt bei Einheimischen & Touristen.",
+    hours: "Mo–Fr 8:00–22:30 · Sa–So 9:00–22:30",
+  },
+  {
+    name: "Bella Vida café",
+    type: "Café",
+    price: "€€",
+    description:
+      "",
+    maps: "https://maps.app.goo.gl/MqfcezRF7gKeGUW48",
+    image:
+      "https://pct-wp-prod.storage.googleapis.com/2024/12/10102323/186998999_5413061602068556_9068538109623073432_n.jpg",
+    emoji: "🥐",
+    tip: "Ich mag Züge.",
+    hours: "Mo–Do & So 8:00–18:00 · Fr & Sa 8:00–20:00",
+  },
+  {
+    name: "Bagel Lounge Malostranská",
+    type: "Tschechisches Bistro",
+    price: "€€",
+    description:
+      "",
+    maps: "https://bagellounge.cz/menu/malostranska",
+    image:
+      "https://d48-a.sdn.cz/d_48/c_img_QO_0/wCbaX6.jpeg?fl=res,600,400,3,ffffff",
+    emoji: "🥯",
+    tip: "Keine Ahnung... 161!",
+    hours: "Mo-So 8:00-18:00",
+  },
+  {
+    name: "Místo",
+    type: "Specialty Coffee",
+    price: "€",
+    description:
+      "Kleines, gemütliches Specialty-Coffee-Café nahe der Karlsbrücke. Perfekt für einen schnellen, starken Kaffee und ein Croissant vor dem Sightseeing.",
+    maps: "https://maps.app.goo.gl/MistoPrague",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/A_small_cup_of_coffee.JPG/1280px-A_small_cup_of_coffee.JPG",
+    emoji: "☕",
+    tip: "Früh kommen – die Plätze sind begrenzt und die Locals kennen es.",
+    hours: "Mo–Fr 7:30–18:00 · Sa–So 8:30–18:00",
+  },
+];
+
 export default function PragTrip() {
-  const [activeSection, setActiveSection] = useState<"attractions" | "parking">(
+  const [activeSection, setActiveSection] = useState<"attractions" | "parking" | "breakfast">(
     "attractions"
   );
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
+  const [expandedBreakfast, setExpandedBreakfast] = useState<number | null>(null);
 
   return (
     <div className="min-h-screen bg-stone-950 text-stone-100 font-sans">
@@ -208,10 +264,11 @@ export default function PragTrip() {
           </p>
 
           {/* Quick stats */}
-          <div className="flex justify-center gap-4 mt-8">
+          <div className="flex justify-center gap-3 mt-8 flex-wrap">
             {[
-              { icon: "🗺️", label: `${attractions.length} Sehenswürdigkeiten` },
-              { icon: "🅿️", label: "2 Parkmöglichkeiten" },
+              { icon: "🗺️", label: `${attractions.length} Highlights` },
+              { icon: "🅿️", label: "2 Parkoptionen" },
+              { icon: "🍳", label: `${breakfastOptions.length} Cafés` },
               { icon: "🕐", label: "1 Tag" },
             ].map((s, i) => (
               <div key={i} className="glass rounded-xl px-3 py-2 text-center">
@@ -236,7 +293,17 @@ export default function PragTrip() {
                 : "text-stone-400 hover:text-stone-200"
             }`}
           >
-            🏛️ Sehenswürdigkeiten
+            🏛️ Sights
+          </button>
+          <button
+            onClick={() => setActiveSection("breakfast")}
+            className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+              activeSection === "breakfast"
+                ? "tab-active"
+                : "text-stone-400 hover:text-stone-200"
+            }`}
+          >
+            🍳 Frühstück
           </button>
           <button
             onClick={() => setActiveSection("parking")}
@@ -334,6 +401,108 @@ export default function PragTrip() {
                   )}
                 </div>
               ))}
+            </div>
+          </div>
+        )}
+
+        {/* BREAKFAST */}
+        {activeSection === "breakfast" && (
+          <div>
+            <div className="mb-6">
+              <h2 className="display-font text-2xl font-bold mb-1">
+                Frühstück & Kaffee
+              </h2>
+              <p className="text-stone-500 text-sm">
+                Der perfekte Start in euren Prag-Tag
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              {breakfastOptions.map((cafe, i) => (
+                <div
+                  key={i}
+                  className="glass rounded-2xl overflow-hidden card-hover cursor-pointer"
+                  onClick={() =>
+                    setExpandedBreakfast(expandedBreakfast === i ? null : i)
+                  }
+                >
+                  {/* Image */}
+                  <div className="relative">
+                    <img
+                      src={cafe.image}
+                      alt={cafe.name}
+                      className="img-cover"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src =
+                          "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/A_Night_View_of_Prague_%286975049566%29.jpg/800px-A_Night_View_of_Prague_%286975049566%29.jpg";
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 to-transparent" />
+                    <div className="absolute bottom-3 left-4 right-4 flex items-end justify-between">
+                      <div>
+                        <span className="pill bg-stone-800 text-stone-300 mb-1">
+                          {cafe.type}
+                        </span>
+                        <h3 className="display-font text-xl font-bold text-white leading-tight">
+                          {cafe.emoji} {cafe.name}
+                        </h3>
+                      </div>
+                      <div className="flex flex-col items-end gap-1">
+                        <span className="gold-accent font-semibold text-sm">{cafe.price}</span>
+                        <span
+                          className="text-stone-400 text-xl transition-transform duration-300"
+                          style={{
+                            transform:
+                              expandedBreakfast === i
+                                ? "rotate(180deg)"
+                                : "rotate(0deg)",
+                          }}
+                        >
+                          ↓
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Expandable content */}
+                  {expandedBreakfast === i && (
+                    <div className="p-4 space-y-3">
+                      <p className="text-stone-300 text-sm leading-relaxed">
+                        {cafe.description}
+                      </p>
+                      <div className="flex items-center gap-2 text-stone-400 text-xs">
+                        <span>🕐</span>
+                        <span>{cafe.hours}</span>
+                      </div>
+                      <div className="tip-box rounded-lg p-3">
+                        <p className="text-xs gold-accent font-semibold mb-1">
+                          💡 Insider-Tipp
+                        </p>
+                        <p className="text-stone-300 text-sm">{cafe.tip}</p>
+                      </div>
+                      <a
+                        href={cafe.maps}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="map-btn"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        📍 Link öffnen
+                      </a>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <div className="tip-box rounded-xl p-4 mt-4">
+              <p className="text-xs gold-accent font-semibold mb-1">
+                💡 Allgemeiner Tipp
+              </p>
+              <p className="text-stone-300 text-sm leading-relaxed">
+                In Prag zahlt ihr für Kaffee deutlich weniger als in Deutschland.
+                Tschechischer Kaffee ist stark – perfekt für einen langen Sightseeing-Tag!
+              </p>
             </div>
           </div>
         )}

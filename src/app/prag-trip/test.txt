@@ -1,0 +1,87 @@
+const parkingOptions = [
+  {
+    name: "Parking Millennium",
+    price: "2,06 € / Stunde",
+    note: "Nähe Altstadt · 20 min zur Karlsbrücke",
+    link: "https://maps.app.goo.gl/4Q7tdLNbxAyTxhfr9",
+    tag: "Günstig",
+    tagColor: "bg-emerald-500",
+  },
+  {
+    name: "Parkhaus Rudolfinum",
+    price: "2,89 € / Stunde",
+    note: "In der Altstadt · 8 min zur Karlsbrücke",
+    link: "https://maps.app.goo.gl/4Q7tdLNbxAyTxhfr9",
+    tag: "Zentral",
+    tagColor: "bg-amber-500",
+  },
+];
+
+const attractions = [
+  {
+    name: "Prager Rathausuhr",
+    category: "Altstadt",
+    description:
+      "Das astronomische Wunder aus dem 15. Jahrhundert. Stündlich dreht sich das Karussell der Apostel – ein Spektakel, das du live erlebt haben musst.",
+    maps: "https://maps.app.goo.gl/oC3bZ1eZQEk6VX9J7",
+    image:
+      "https://cdn-imgix.headout.com/media/images/fb2c316f-bd13-4dd1-8bff-165d2f040fe9-1747321711106-main.jpg?auto=format&w=1222.3999999999999&h=687.6&q=90&ar=16%3A9&crop=faces&fit=crop",
+    emoji: "⏰",
+    tip: "Zur vollen Stunde kommen für das Apostelspiel!",
+  },
+  {
+    name: "Teynkirche",
+    category: "Altstadt",
+    description:
+      "Die gotischen Zwillingstürme prägen die Silhouette des Altstädter Rings. Die Kirche steckt voller Kunstschätze aus Jahrhunderten.",
+    maps: "https://maps.app.goo.gl/DpKt2chghgdXWh83A",
+    image:
+      "https://cdn.praguecitytourism.city/2024/03/14105433/850_3148.jpg",
+    emoji: "⛪",
+    tip: "Beste Fotos vom Café Montmartre aus.",
+  },
+  {
+    name: "Karlsbrücke",
+    category: "Altstadt",
+    description:
+      "Die berühmteste Brücke Prags verbindet die Altstadt mit der Kleinseite. 30 Barockstatuen säumen den Weg – jede mit ihrer eigenen Geschichte.",
+    maps: "https://maps.app.goo.gl/Karlsbrücke",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/b/b7/Puente_Carlos%2C_Praga%2C_Rep%C3%BAblica_Checa%2C_2022-07-02%2C_DD_234-236_HDR.jpg",
+    emoji: "🌉",
+    tip: "Frühmorgens fast menschenleer – perfekt für Fotos!",
+  },
+  {
+    name: "Prager Burg",
+    category: "Hradschin",
+    description:
+      "Europas größte Burganlage thront über der Stadt. Dom, Paläste und goldenes Gässchen – hier steckt Geschichte in jeder Gasse.",
+    maps: "https://maps.app.goo.gl/PragerBurg",
+    image:
+      "https://i0.wp.com/homeoftravel.de/wp-content/uploads/2022/10/Prager-Burg-mit-Veitsdom-am-Abend-.jpg?resize=1024%2C683&quality=89&ssl=1",
+    emoji: "🏰",
+    tip: "Blick über die Moldau nicht verpassen!",
+  },
+  {
+    name: "Josefov – Jüdisches Viertel",
+    category: "Altstadt",
+    description:
+      "Das besterhaltene jüdische Viertel Europas. Alte Synagogen, der Alte jüdische Friedhof und eine bewegende Geschichte erwarten euch.",
+    maps: "https://maps.app.goo.gl/Josefov",
+    image:
+      "https://d37rmf1ynyg9aw.cloudfront.net/fit-in/1280x1280/data/v4/resources/images/e8fa698d-692d-43a9-b8e0-1b0a24c02d38.jpg",
+    emoji: "✡️",
+    tip: "Tickets online vorbuchen spart Wartezeit.",
+  },
+  {
+    name: "Wenzelsplatz",
+    category: "Neustadt",
+    description:
+      "Das pulsierende Herz der modernen Stadt. Flanieren, Shoppen, Streetfood – hier trifft Geschichte auf das heutige Prag.",
+    maps: "https://maps.app.goo.gl/Wenzelsplatz",
+    image:
+      "https://prag-infos.de/wp-content/uploads/2018/12/Wenzelsplatz.jpg",
+    emoji: "🏛️",
+    tip: "Abends besonders schön beleuchtet.",
+  },
+];
