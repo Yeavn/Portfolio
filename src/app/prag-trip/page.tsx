@@ -119,7 +119,7 @@ const breakfastOptions = [
   },
   {
     name: "Bagel Lounge Malostranská",
-    type: "Tschechisches Bistro",
+    type: "Geiler Bagel Schuppen",
     price: "€€",
     description:
       "",
